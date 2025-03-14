@@ -5,8 +5,8 @@ public class NumberUtils
 	public NumberUtils()
 	{
 	}
-	/*
-	public int BabylonNRoot(int num, int n)
+	
+	public double BabylonNRoot(int num, int n)
 	{
 		double guess = 1;
 		double x = num;
@@ -20,5 +20,5 @@ public class NumberUtils
 			guess = num / x;
 		}
 		return x;
-    }*/
+    }
 }
