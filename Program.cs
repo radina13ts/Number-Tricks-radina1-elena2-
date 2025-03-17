@@ -6,8 +6,6 @@ test.Eratosten(n);
 
 
 Console.WriteLine("Hello, World!");
-
-NumberUtils test = new NumberUtils();
 Console.WriteLine(test.BabylonNRoot(1024, 2));
 
 
