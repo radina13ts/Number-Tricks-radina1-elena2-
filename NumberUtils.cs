@@ -36,5 +36,5 @@ public class NumberUtils
 			guess = num / x;
 		}
 		return x;
-   }
+    }
 }
