@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography.X509Certificates;
 
 public class NumberUtils
@@ -62,4 +64,68 @@ public class NumberUtils
 		}
 		return x;
     }
+
+    public int sumRow(int[,] array, int row)
+    {
+        int n = array.GetLength(0);
+        int sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum += array[row, i];
+        }
+        return sum;
+    }
+    public int sumCol(int[,] array, int col)
+    {
+        int n = array.GetLength(0);
+        int sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum += array[i, col];
+        }
+        return sum;
+    }
+
+    public void IsItAMagicSquare(int[,] array)
+    {
+        int n = array.GetLength(0);
+        
+        int sumD1 = 0;
+        int sumD2 = 0;
+        
+        for (int i = 0; i < n; i++)
+        {
+            sumD1 += array[i, i];
+            sumD2 += array[i, n - 1 - i];
+        }
+
+        List<int>AllSums = new List<int>();
+        if (sumD1 == sumD2)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                AllSums.Add(sumRow(array, i));
+                AllSums.Add(sumCol(array, i));
+            }
+            if (AllSums.Distinct().Skip(1).Any())
+            {
+                Console.WriteLine("not magic");
+            }
+            else
+            {
+                Console.WriteLine("magic");
+            }
+        }
+        else Console.WriteLine("not magic!");
+
+
+    }
 }
+
+
+
+
+
+
+
+
